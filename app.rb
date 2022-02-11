@@ -16,7 +16,6 @@ class Battle < Sinatra::Base
     $player_1 = Player.new(params[:player_1_name])
     $player_2 = Player.new(params[:player_2_name])
     redirect to('/play')
-    redirect to('/attack')
   end
 
   get '/play' do
