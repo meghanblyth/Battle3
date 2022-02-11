@@ -15,11 +15,10 @@ describe Player do
       expect(ali.hit_points).to eq described_class::DEFAULT_HIT_POINTS
     end
   end
-    
-  describe "#attack" do
-    it "allows a player to attack another player" do
-      expect(meghan.attack).to receive(:take_damage)
+
+  describe '#receive_damage' do
+    it 'reduces the player hit points by -10' do
+      expect { ali.receive_damage }.to change { ali.hit_points }.by(-10)
     end
   end
-
 end
